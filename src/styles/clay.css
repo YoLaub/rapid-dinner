@@ -355,15 +355,41 @@ img {
 }
 
 /* Infos pratiques */
+#infos > .clay-card {
+  padding: 1.6rem 1.4rem 1.8rem;
+}
+#infos > .clay-card > h2 {
+  margin-bottom: 1.2rem;
+}
 .infos-grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
+}
+.info-block {
+  background: var(--cream);
+  border-radius: var(--r-md);
+  padding: 1.2rem 1.25rem;
+  box-shadow: var(--clay-inset);
+}
+.info-block h3 {
+  color: var(--red);
+  font-size: 1.1rem;
+  margin-bottom: 0.85rem;
+}
+.info-block .address {
+  margin: 0 0 1.1rem;
+  line-height: 1.7;
+}
+.hours {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .hours li {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.4rem 0;
+  padding: 0.6rem 0;
   border-bottom: 1px dashed var(--cream-deep);
 }
 .hours li:last-child {
@@ -397,6 +423,7 @@ img {
 @media (min-width: 640px) {
   .infos-grid {
     grid-template-columns: 1fr 1fr;
-    align-items: start;
+    gap: 1.75rem;
+    align-items: stretch;
   }
 }

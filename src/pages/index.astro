@@ -73,9 +73,9 @@ const telUrl = `tel:${site.phoneHref}`;
       <article class="clay-card">
         <h2>📌 Infos pratiques</h2>
         <div class="infos-grid">
-          <div>
+          <div class="info-block">
             <h3>Horaires</h3>
-            <ul class="hours" style="list-style:none;padding:0;margin:.5rem 0 0;">
+            <ul class="hours">
               {site.hours.map((h) => (
                 <li>
                   <span class="days">{h.days}</span>
@@ -84,9 +84,9 @@ const telUrl = `tel:${site.phoneHref}`;
               ))}
             </ul>
           </div>
-          <div>
+          <div class="info-block">
             <h3>Nous trouver</h3>
-            <p style="margin:.5rem 0;">
+            <p class="address">
               {site.address.street}<br />
               {site.address.postalCode} {site.address.city}
             </p>
