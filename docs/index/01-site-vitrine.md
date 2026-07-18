@@ -18,7 +18,7 @@ tests:
 decisions:
   - "2026-07-18 : Astro + sortie statique + Netlify (site vitrine léger, SEO natif, hébergement gratuit)."
   - "2026-07-18 : carte 100% pilotée par src/data/menu.json (maintenance par un non-technicien)."
-  - "2026-07-18 : nom de marque = Rapid'Diner (logo/carte), pas 'Rapid'Dinner' (nom du dossier)."
+  - "2026-07-18 : nom de marque = Rapid'Dinner (deux N, confirmé client) ; le logo stylise en 'Diner'."
   - "2026-07-18 : design Claymorphisme aux couleurs du logo (rouge/doré/crème), mobile-first."
 ---
 

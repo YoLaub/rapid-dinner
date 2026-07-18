@@ -88,7 +88,7 @@
       "name": "Les Salades",
       "icon": "🥗",
       "items": [
-        { "name": "Salade Rapid'diner", "price": 9.5, "description": "Salade, œuf dur, jambon, emmental morceau, maïs, tomate" },
+        { "name": "Salade Rapid'Dinner", "price": 9.5, "description": "Salade, œuf dur, jambon, emmental morceau, maïs, tomate" },
         { "name": "Salade fermière", "price": 9.5, "description": "Salade, omelette, lardons, oignons crus, tomate" },
         { "name": "Salade printanière", "price": 9.5, "description": "Salade, tomate, œuf dur, thon, radis, oignons crus" }
       ]

@@ -13,7 +13,7 @@ stack du projet en cours — inutile de charger le reste en contexte.
 - Rendre en headless une page protégée : jeton court (JWT) lié au chemin, autorisé dans le proxy.
 - Intl fr-FR : séparateurs = espaces insécables ; comparer via le formateur, pas une chaîne écrite.
 
-## Astro / site statique (2026-07, projet Rapid'Diner)
+## Astro / site statique (2026-07, projet Rapid'Dinner)
 - Intl fr-FR (prix, dates) : espaces insécables U+00A0 **et** U+202F entre nombre et
   symbole → normaliser via `.replace(/\p{White_Space}/gu, ' ')` avant affichage/comparaison.
 - Astro échappe les apostrophes des expressions `{...}` en `&#39;` dans le HTML : les
