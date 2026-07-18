@@ -1,4 +1,4 @@
-# Rétro continue — Rapid'Diner
+# Rétro continue — Rapid'Dinner
 
 Ce qui a fonctionné / ce qui a mordu, au fil de l'eau. Pièges génériques réutilisables →
 aussi remontés dans le skill `greenfield-tdd-okf/references/pieges.md`.
@@ -12,8 +12,9 @@ aussi remontés dans le skill `greenfield-tdd-okf/references/pieges.md`.
 - Astro static : build < 1s, HTML pur, JSON-LD SEO généré depuis les mêmes données.
 
 **A mordu (spécifique projet)**
-- Le nom réel de l'enseigne est **Rapid'Diner** (pas « Rapid'Dinner » = nom du dossier).
-  Corrigé partout ; ne jamais afficher l'orthographe du dossier.
+- Orthographe du nom : d'abord lu « Rapid'Diner » sur le logo, puis **corrigé en
+  « Rapid'Dinner » (deux N) sur confirmation du client** 2026-07-18. Le logo stylise en
+  « Diner » mais l'enseigne s'écrit avec deux N.
 - Prix Intl fr-FR : espaces insécables → normalisés dans `formatPrice` (piège générique,
   remonté dans `references/pieges.md`).
 - Contrôle E2E par grep : Astro échappe les apostrophes (`&#39;`), le grep doit en tenir

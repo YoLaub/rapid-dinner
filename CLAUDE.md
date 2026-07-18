@@ -1,14 +1,15 @@
-# CLAUDE.md — Conventions du repo Rapid'Diner
+# CLAUDE.md — Conventions du repo Rapid'Dinner
 
 ## Contexte
-Site vitrine pour **Rapid'Diner**, fast food à **Saint-Jean-Brévelay (56, Morbihan)**.
-Le restaurant est bien noté mais n'existe en ligne que via sa page Facebook (« Rapid'Diner
+Site vitrine pour **Rapid'Dinner**, fast food à **Saint-Jean-Brévelay (56, Morbihan)**.
+Le restaurant est bien noté mais n'existe en ligne que via sa page Facebook (« Rapid'Dinner
 morel ») — pas de site. **Problème n°1 à résoudre : le manque de visibilité de la carte.**
 Le site met la carte (menus, sandwichs, prix) au centre de tout : accessible en 1 clic,
 lisible sur mobile, à jour facilement.
 
-> Nom de marque officiel = **Rapid'Diner** (logo + carte). Le dossier de travail
-> s'appelle « Rapid'Dinner » mais on n'affiche jamais cette orthographe.
+> Nom de marque officiel = **Rapid'Dinner** (deux N), confirmé par le client 2026-07-18.
+> Le logo le stylise en « Rapid' Diner » mais l'enseigne s'écrit avec deux N : toujours
+> afficher « Rapid'Dinner ».
 
 ## Coordonnées (source de vérité : docs/ux/carte.jpeg)
 - Adresse : 6 rue de Vannes, 56660 Saint-Jean-Brévelay
@@ -16,7 +17,7 @@ lisible sur mobile, à jour facilement.
 - Horaires : Mardi midi au Samedi soir, 12h00–14h00 et 18h30–22h00 ; Dimanche 18h30–22h00
   (fermé lundi et mardi soir — à confirmer avec le client)
 - Sur place ou à emporter
-- Facebook : page « Rapid'Diner morel » (URL exacte à récupérer)
+- Facebook : page « Rapid'Dinner morel » (URL exacte à récupérer)
 
 ## Objectifs du site
 1. **La carte d'abord** : carte visible dès l'arrivée, par catégories (formules, sandwichs

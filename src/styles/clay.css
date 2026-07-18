@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Rapid'Diner — Design system « Claymorphisme »
+   Rapid'Dinner — Design system « Claymorphisme »
    Couleurs tirées du logo : rouge (gobelet), doré (frites/pain), noir (contours),
    crème (fond), vert (salade). Surfaces douces, coins arrondis, ombres en relief.
    ========================================================================== */
@@ -18,10 +18,10 @@
   --surface: #ffffff;
   --muted: #6f665c;
 
-  /* Rayons généreux = aspect « pâte à modeler » */
-  --r-sm: 14px;
-  --r-md: 22px;
-  --r-lg: 32px;
+  /* Rayons doux mais mesurés */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
   --r-pill: 999px;
 
   /* Ombres claymorphiques : relief externe (clair + foncé) */
