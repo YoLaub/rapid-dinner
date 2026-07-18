@@ -1,6 +1,6 @@
-# Rapid'Diner — Site vitrine
+# Rapid'Dinner — Site vitrine
 
-Site vitrine du fast food **Rapid'Diner** (6 rue de Vannes, 56660 Saint-Jean-Brévelay).
+Site vitrine du fast food **Rapid'Dinner** (6 rue de Vannes, 56660 Saint-Jean-Brévelay).
 Objectif n°1 : rendre **la carte** visible et à jour, là où le restaurant n'existait en
 ligne que sur Facebook.
 

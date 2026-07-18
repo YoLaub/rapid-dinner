@@ -75,7 +75,7 @@ describe('buildRestaurantSchema (JSON-LD)', () => {
   it('produit un Restaurant schema.org valide', () => {
     expect(schema['@context']).toBe('https://schema.org');
     expect(schema['@type']).toBe('Restaurant');
-    expect(schema.name).toBe("Rapid'Diner");
+    expect(schema.name).toBe("Rapid'Dinner");
     expect(schema.telephone).toBe('02 97 41 99 89');
     expect(schema.address['@type']).toBe('PostalAddress');
     expect(schema.address.addressLocality).toBe('Saint-Jean-Brévelay');
