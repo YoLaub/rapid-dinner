@@ -1,0 +1,30 @@
+---
+import { formatPrice } from '../lib/menu.js';
+
+const { category } = Astro.props;
+const featured = category.featured ? ' section-featured' : '';
+---
+
+<section id={category.id} class="menu-section">
+  <article class={`clay-card${featured}`}>
+    <h2><span aria-hidden="true">{category.icon}</span> {category.name}</h2>
+    {category.note && <p class="section-note">{category.note}</p>}
+
+    <div class="items">
+      {
+        category.items.map((item) => (
+          <div class="item">
+            <span class="item-name">{item.name}</span>
+            <span class="item-price">
+              {formatPrice(item.price)}
+              {item.priceFrites && (
+                <span class="frites">{formatPrice(item.priceFrites)} avec frites</span>
+              )}
+            </span>
+            {item.description && <span class="item-desc">{item.description}</span>}
+          </div>
+        ))
+      }
+    </div>
+  </article>
+</section>

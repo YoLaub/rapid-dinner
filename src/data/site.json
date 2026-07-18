@@ -1,0 +1,35 @@
+{
+  "name": "Rapid'Diner",
+  "tagline": "Fast food à Saint-Jean-Brévelay",
+  "description": "Burgers maison, kebab halal, paninis, salades et plats chauds à Saint-Jean-Brévelay. Sur place ou à emporter.",
+  "phone": "02 97 41 99 89",
+  "phoneHref": "+33297419989",
+  "address": {
+    "street": "6 rue de Vannes",
+    "postalCode": "56660",
+    "city": "Saint-Jean-Brévelay",
+    "region": "Morbihan",
+    "country": "FR"
+  },
+  "geo": {
+    "latitude": 47.8069,
+    "longitude": -2.7008,
+    "note": "Coordonnées approximatives centre-bourg — à affiner avec le client."
+  },
+  "service": ["Sur place", "À emporter"],
+  "facebook": "https://www.facebook.com/people/Rapid-Diner-morel/",
+  "facebookNote": "URL exacte à confirmer avec le client.",
+  "priceRange": "€",
+  "servesCuisine": ["Fast food", "Burger", "Kebab"],
+  "hours": [
+    { "days": "Mardi au samedi", "slots": ["12h00 – 14h00", "18h30 – 22h00"] },
+    { "days": "Dimanche", "slots": ["18h30 – 22h00"] },
+    { "days": "Lundi", "slots": ["Fermé"] }
+  ],
+  "openingHoursSpec": [
+    { "days": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "12:00", "closes": "14:00" },
+    { "days": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "18:30", "closes": "22:00" },
+    { "days": ["Sunday"], "opens": "18:30", "closes": "22:00" }
+  ],
+  "alcoholNotice": "L'abus d'alcool est dangereux pour la santé. À consommer avec modération."
+}

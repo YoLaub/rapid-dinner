@@ -1,0 +1,147 @@
+{
+  "currency": "EUR",
+  "source": "docs/ux/carte.jpeg — Nouveaux tarifs Avril 2026",
+  "sauces": [
+    "Mayonnaise (maison)",
+    "Moutarde",
+    "Sauce blanche (maison)",
+    "Harissa",
+    "Ketchup",
+    "Algérienne",
+    "Samouraï",
+    "Burger",
+    "Barbecue"
+  ],
+  "categories": [
+    {
+      "id": "formules",
+      "name": "Les Formules",
+      "icon": "🍔",
+      "featured": true,
+      "items": [
+        { "name": "Formule Kebab", "price": 12.5, "description": "Kebab + frites + pain rond ou baguette + boisson 33cl" },
+        { "name": "Formule Burger", "price": 12.5, "description": "Burger + frites + boisson 33cl" }
+      ]
+    },
+    {
+      "id": "sandwichs-chauds",
+      "name": "Les Sandwichs Chauds",
+      "icon": "🥙",
+      "note": "Prix indiqués : sandwich seul / avec frites.",
+      "items": [
+        { "name": "Kebab (halal)", "price": 10.5, "priceFrites": 11.0, "description": "½ baguette ou pain rond, viande de dinde et de veau épicée, salade, oignons cuits, sauce au choix" },
+        { "name": "Steak haché (halal)", "price": 9.0, "priceFrites": 9.5, "description": "½ baguette, viande de bœuf, oignons cuits, cheddar, salade, sauce au choix" },
+        { "name": "Hot Dog", "price": 8.5, "priceFrites": 9.0, "description": "½ baguette, 2 saucisses de Francfort, oignons cuits, cheddar, sauce au choix" },
+        { "name": "Omelette", "price": 7.5, "priceFrites": 8.0, "description": "½ baguette, omelette, salade, sauce au choix" },
+        { "name": "Volaille", "price": 8.5, "priceFrites": 9.0, "description": "½ baguette, viande de dinde, oignons cuits, salade, sauce au choix" },
+        { "name": "Hamburger (maison)", "price": 10.5, "priceFrites": 11.0, "description": "Pain artisanal, viande de bœuf façon bouchère, cheddar, oignons cuits, tomate, salade, sauce au choix" },
+        { "name": "Burger végétarien", "price": 11.5, "priceFrites": 12.0, "description": "Pain artisanal, haché végétarien, oignons cuits, tomate, salade, sauce au choix" },
+        { "name": "Barquette de frites", "price": 3.0, "description": "125 grammes" },
+        { "name": "Salade verte", "price": 2.0, "description": "" }
+      ]
+    },
+    {
+      "id": "sandwichs-froids",
+      "name": "Les Sandwichs Froids",
+      "icon": "🥖",
+      "items": [
+        { "name": "Américain jambon", "price": 7.0, "description": "½ baguette, mayonnaise, jambon, œuf dur, tomate, salade" },
+        { "name": "Jambon", "price": 5.5, "description": "½ baguette, jambon, beurre ou mayonnaise" },
+        { "name": "Fromage", "price": 5.5, "description": "½ baguette, emmental morceau, beurre ou mayonnaise" },
+        { "name": "Jambon, fromage", "price": 6.5, "description": "½ baguette, jambon, emmental morceau, beurre ou mayonnaise" },
+        { "name": "Américain thon", "price": 8.5, "description": "½ baguette, mayonnaise, œuf dur, tomate, thon, salade" }
+      ]
+    },
+    {
+      "id": "paninis",
+      "name": "Les Paninis",
+      "icon": "🫓",
+      "items": [
+        { "name": "Panini Le classic", "price": 7.0, "description": "Jambon, fromage" },
+        { "name": "Panini Américain", "price": 8.5, "description": "Bœuf haché, cheddar, oignons cuits" },
+        { "name": "Panini trois fromages", "price": 8.5, "description": "Emmental, chèvre, cheddar" },
+        { "name": "Panini volaille", "price": 8.5, "description": "Émincé de dinde, tomate, oignons cuits, emmental" },
+        { "name": "Panini Kebab", "price": 8.5, "description": "Kebab, oignons cuits, cheddar" },
+        { "name": "Panini Nutella", "price": 3.5, "description": "" }
+      ]
+    },
+    {
+      "id": "plats-chauds",
+      "name": "Les Plats Chauds",
+      "icon": "🍽️",
+      "note": "Servis en assiette.",
+      "items": [
+        { "name": "Kebab assiette (halal)", "price": 12.0, "description": "Viande de dinde et de veau épicée, salade, oignons cuits, frites — ou émincé de volaille, même garniture" },
+        { "name": "Steak haché assiette", "price": 12.0, "description": "Viande de bœuf façon bouchère, salade, frites" },
+        { "name": "Haché végétarien assiette", "price": 12.5, "description": "Steak végétarien, salade, frites" },
+        { "name": "Omelette assiette", "price": 10.0, "description": "Omelette, salade, frites" },
+        { "name": "Omelette fromage assiette", "price": 11.0, "description": "Omelette, emmental râpé, salade, frites" },
+        { "name": "Jambon assiette", "price": 10.0, "description": "2 tranches de jambon, salade, frites" },
+        { "name": "Saucisses assiette", "price": 10.5, "description": "2 véritables saucisses de Francfort, salade, frites" },
+        { "name": "Croque Monsieur (maison)", "price": 11.0, "description": "Pain de mie, crème fraîche, emmental râpé, jambon, salade" },
+        { "name": "Croque Madame (maison)", "price": 12.0, "description": "Pain de mie, crème fraîche, emmental râpé, jambon, œuf au plat" },
+        { "name": "Supplément sauce", "price": 0.2, "description": "" }
+      ]
+    },
+    {
+      "id": "salades",
+      "name": "Les Salades",
+      "icon": "🥗",
+      "items": [
+        { "name": "Salade Rapid'diner", "price": 9.5, "description": "Salade, œuf dur, jambon, emmental morceau, maïs, tomate" },
+        { "name": "Salade fermière", "price": 9.5, "description": "Salade, omelette, lardons, oignons crus, tomate" },
+        { "name": "Salade printanière", "price": 9.5, "description": "Salade, tomate, œuf dur, thon, radis, oignons crus" }
+      ]
+    },
+    {
+      "id": "boissons",
+      "name": "Les Boissons sans alcool",
+      "icon": "🥤",
+      "note": "Canettes/bouteilles 33cl : 2,00 €.",
+      "items": [
+        { "name": "Coca-Cola", "price": 2.0, "description": "33cl" },
+        { "name": "Coca-Cola light", "price": 2.0, "description": "33cl" },
+        { "name": "Coca-Cola Cherry", "price": 2.0, "description": "33cl" },
+        { "name": "Orangina", "price": 2.0, "description": "33cl" },
+        { "name": "Sprite", "price": 2.0, "description": "33cl" },
+        { "name": "Fanta", "price": 2.0, "description": "33cl" },
+        { "name": "Jus d'orange", "price": 2.0, "description": "33cl" },
+        { "name": "Jus de pomme", "price": 2.0, "description": "33cl" },
+        { "name": "Fuztea", "price": 2.0, "description": "33cl" },
+        { "name": "Perrier", "price": 2.0, "description": "33cl" },
+        { "name": "Eau de source", "price": 1.0, "description": "50cl" },
+        { "name": "Eau de source", "price": 2.0, "description": "1,5 L" },
+        { "name": "Café", "price": 1.6, "description": "" }
+      ]
+    },
+    {
+      "id": "aperitifs",
+      "name": "Les Apéritifs",
+      "icon": "🍷",
+      "note": "L'abus d'alcool est dangereux pour la santé. À consommer avec modération. Vente d'alcool interdite aux mineurs.",
+      "items": [
+        { "name": "Martini rouge", "price": 3.0, "description": "5cl" },
+        { "name": "Martini blanc", "price": 3.0, "description": "5cl" },
+        { "name": "Porto rouge", "price": 3.0, "description": "5cl" },
+        { "name": "Rosé Pamplemousse", "price": 3.0, "description": "10cl" },
+        { "name": "Ricard", "price": 4.0, "description": "2cl" },
+        { "name": "Whisky", "price": 4.0, "description": "4cl" },
+        { "name": "Bouteille de rosé", "price": 11.0, "description": "75cl — vin du moment" },
+        { "name": "Bouteille de rouge", "price": 11.0, "description": "75cl — vin du moment" },
+        { "name": "Verre de rosé", "price": 3.0, "description": "10cl" },
+        { "name": "Verre de blanc", "price": 3.0, "description": "10cl" },
+        { "name": "Heineken", "price": 3.0, "description": "33cl" },
+        { "name": "1664", "price": 3.0, "description": "33cl" }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": "Les Petits Plaisirs Sucrés",
+      "icon": "🍰",
+      "items": [
+        { "name": "Dessert du moment", "price": 3.5, "description": "" },
+        { "name": "Panini Nutella", "price": 3.5, "description": "" }
+      ]
+    }
+  ]
+}
