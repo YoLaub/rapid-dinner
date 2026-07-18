@@ -16,7 +16,6 @@ const telUrl = `tel:${site.phoneHref}`;
   <header class="site-header">
     <div class="wrap bar">
       <a class="brand" href="#top">
-        <img src="/logo.jpeg" alt="Logo Rapid'Diner" />
         <span>Rapid'Diner</span>
       </a>
       <a class="btn btn-red header-call" href={telUrl}>📞 Appeler</a>
@@ -45,10 +44,14 @@ const telUrl = `tel:${site.phoneHref}`;
 
     <!-- Navigation des catégories -->
     <nav class="cat-nav" aria-label="Catégories de la carte">
-      <div class="scroller">
-        {menu.categories.map((c) => (
-          <a class="clay-pill" href={`#${c.id}`}>{c.icon} {c.name.replace(/^Les?\s+/i, '')}</a>
-        ))}
+      <div class="row">
+        <button type="button" class="cat-arrow" data-cat-prev aria-label="Catégories précédentes">‹</button>
+        <div class="scroller" data-cat-scroller>
+          {menu.categories.map((c) => (
+            <a class="clay-pill" href={`#${c.id}`}>{c.icon} {c.name.replace(/^Les?\s+/i, '')}</a>
+          ))}
+        </div>
+        <button type="button" class="cat-arrow" data-cat-next aria-label="Catégories suivantes">›</button>
       </div>
     </nav>
 
@@ -112,4 +115,24 @@ const telUrl = `tel:${site.phoneHref}`;
       </p>
     </div>
   </footer>
+
+  <script>
+    // Flèches de défilement horizontal de la nav des catégories.
+    const scroller = document.querySelector('[data-cat-scroller]');
+    const prev = document.querySelector('[data-cat-prev]');
+    const next = document.querySelector('[data-cat-next]');
+    if (scroller && prev && next) {
+      const step = () => Math.max(160, scroller.clientWidth * 0.75);
+      const sync = () => {
+        const max = scroller.scrollWidth - scroller.clientWidth - 1;
+        prev.toggleAttribute('disabled', scroller.scrollLeft <= 0);
+        next.toggleAttribute('disabled', scroller.scrollLeft >= max);
+      };
+      prev.addEventListener('click', () => scroller.scrollBy({ left: -step(), behavior: 'smooth' }));
+      next.addEventListener('click', () => scroller.scrollBy({ left: step(), behavior: 'smooth' }));
+      scroller.addEventListener('scroll', sync, { passive: true });
+      window.addEventListener('resize', sync);
+      sync();
+    }
+  </script>
 </Base>
