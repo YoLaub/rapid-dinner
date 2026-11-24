@@ -71,6 +71,16 @@ export function buildRestaurantSchema(site, menu) {
       longitude: site.geo.longitude,
     },
     sameAs: site.facebook ? [site.facebook] : [],
+    ...(site.googleReviews
+      ? {
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: site.googleReviews.score.toFixed(1),
+            reviewCount: site.googleReviews.count,
+            bestRating: '5',
+          },
+        }
+      : {}),
     openingHoursSpecification: (site.openingHoursSpec ?? []).map((spec) => ({
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: spec.days,
