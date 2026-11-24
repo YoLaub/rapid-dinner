@@ -22,3 +22,21 @@ aussi remontés dans le skill `greenfield-tdd-okf/references/pieges.md`.
 
 **En attente d'infos client**
 - URL Facebook exacte, GPS précis, jours/horaires de fermeture définitifs, photos des plats.
+
+## 2026-11-24 — Port des fonctions de en-cas 2 faim (statut, avis, panier, a11y)
+
+**Bien fonctionné**
+- Garder le style clay validé par le client et n'ajouter que les fonctions : aucun re-design à faire valider.
+- Les libs `openStatus` / `cart` se portent presque telles quelles : logique pure, dates et stockage injectés.
+- Un test de contraste qui lit les vrais tokens de `clay.css` a trouvé un échec (blanc sur vert des sauces) que l'œil ne voyait pas.
+
+**A mordu**
+- `node_modules` absent : `npx vitest` marchait quand même, mais `astro dev` sortait sans message utile. Faire `npm ci` d'abord.
+- Node par défaut trop ancien pour Astro 7 : `mise exec node@24.18.0 -- ...`.
+- `sed -i` sur macOS demande un suffixe (`sed -i ''`), sinon il prend le script pour le suffixe.
+- Pas de Tailwind ici : les icônes copiées avaient `h-4 w-4` par défaut, sans effet. Classe `.icon` à la place.
+- Styles scopés Astro : une classe passée à un composant enfant (`.star`) n'est pas atteinte, utiliser `:global()`.
+
+**En attente d'infos client**
+- Note Google relevée le 2026-11-24 (4,6 / 116 avis) : à remettre à jour.
+- Sauces au choix : non gérées dans le panier, précisées au téléphone.
