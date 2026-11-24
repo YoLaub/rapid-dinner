@@ -5,12 +5,15 @@ import site from '../data/site.json';
 import menu from '../data/menu.json';
 import OpenStatusBadge from '../components/OpenStatusBadge.astro';
 import GoogleReviewsLink from '../components/GoogleReviewsLink.astro';
+import Cart from '../components/Cart.astro';
+import { buildCatalog } from '../lib/cart.js';
 
 const mapsQuery = encodeURIComponent(
   `${site.name} ${site.address.street} ${site.address.postalCode} ${site.address.city}`
 );
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
 const telUrl = `tel:${site.phoneHref}`;
+const catalog = buildCatalog(menu.categories);
 ---
 
 <Base>
@@ -122,6 +125,8 @@ const telUrl = `tel:${site.phoneHref}`;
       </p>
     </div>
   </footer>
+
+  <Cart {catalog} />
 
   <script>
     // Flèches de défilement horizontal de la nav des catégories.
