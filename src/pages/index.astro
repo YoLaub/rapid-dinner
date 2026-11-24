@@ -6,6 +6,10 @@ import menu from '../data/menu.json';
 import OpenStatusBadge from '../components/OpenStatusBadge.astro';
 import GoogleReviewsLink from '../components/GoogleReviewsLink.astro';
 import Cart from '../components/Cart.astro';
+import Phone from '../components/icons/Phone.astro';
+import MapPin from '../components/icons/MapPin.astro';
+import Clock from '../components/icons/Clock.astro';
+import Facebook from '../components/icons/Facebook.astro';
 import { buildCatalog } from '../lib/cart.js';
 
 const mapsQuery = encodeURIComponent(
@@ -23,21 +27,21 @@ const catalog = buildCatalog(menu.categories);
       <a class="brand" href="#top">
         <span>Rapid'Dinner</span>
       </a>
-      <a class="btn btn-red header-call" href={telUrl}>📞 Appeler</a>
+      <a class="btn btn-red header-call" href={telUrl}><Phone class="icon" /> Appeler</a>
     </div>
   </header>
 
   <main class="wrap" id="top">
     <!-- Hero -->
     <section class="hero">
-      <img class="logo-hero" src="/logo.jpeg" alt="Rapid'Dinner — burgers, frites, kebab" />
+      <img class="logo-hero" src="/logo.jpeg" alt="Logo Rapid'Dinner : burgers, frites et kebab" />
       <h1>Rapid'Dinner</h1>
       <p class="tagline">{site.tagline} · Sur place ou à emporter</p>
 
       <div class="hero-actions">
-        <a class="btn btn-red" href="#formules">🍔 Voir la carte</a>
-        <a class="btn btn-gold" href={telUrl}>📞 {site.phone}</a>
-        <a class="btn btn-cream" href={mapsUrl} target="_blank" rel="noopener">📍 Itinéraire</a>
+        <a class="btn btn-red" href="#formules">Voir la carte</a>
+        <a class="btn btn-gold" href={telUrl}><Phone class="icon" /> {site.phone}</a>
+        <a class="btn btn-cream" href={mapsUrl} target="_blank" rel="noopener"><MapPin class="icon" /> Itinéraire<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a>
       </div>
 
       <div class="hero-status">
@@ -46,9 +50,9 @@ const catalog = buildCatalog(menu.categories);
       </div>
 
       <div class="hero-facts">
-        <span class="clay-pill">📍 {site.address.street}, {site.address.city}</span>
-        <span class="clay-pill">🕑 Mar–Sam · midi &amp; soir</span>
-        <span class="clay-pill">🥙 Kebab halal · 🍔 Burgers maison</span>
+        <span class="clay-pill"><MapPin class="icon" /> {site.address.street}, {site.address.city}</span>
+        <span class="clay-pill"><Clock class="icon" /> Du mardi au samedi, midi et soir</span>
+        <span class="clay-pill">Kebab halal · Burgers maison</span>
       </div>
     </section>
 
@@ -58,7 +62,7 @@ const catalog = buildCatalog(menu.categories);
         <button type="button" class="cat-arrow" data-cat-prev aria-label="Catégories précédentes">‹</button>
         <div class="scroller" data-cat-scroller>
           {menu.categories.map((c) => (
-            <a class="clay-pill" href={`#${c.id}`}>{c.icon} {c.name.replace(/^Les?\s+/i, '')}</a>
+            <a class="clay-pill" href={`#${c.id}`}>{c.name.replace(/^Les?\s+/i, '')}</a>
           ))}
         </div>
         <button type="button" class="cat-arrow" data-cat-next aria-label="Catégories suivantes">›</button>
@@ -71,7 +75,7 @@ const catalog = buildCatalog(menu.categories);
     <!-- Bandeau sauces -->
     <section class="menu-section">
       <article class="clay-card sauces">
-        <h3>🌶️ Les sauces au choix</h3>
+        <h3>Les sauces au choix</h3>
         <div class="tags">
           {menu.sauces.map((s) => <span class="tag">{s}</span>)}
         </div>
@@ -81,7 +85,7 @@ const catalog = buildCatalog(menu.categories);
     <!-- Infos pratiques -->
     <section id="infos" class="menu-section">
       <article class="clay-card">
-        <h2>📌 Infos pratiques</h2>
+        <h2>Infos pratiques</h2>
         <div class="infos-grid">
           <div class="info-block">
             <h3>Horaires</h3>
@@ -101,9 +105,9 @@ const catalog = buildCatalog(menu.categories);
               {site.address.postalCode} {site.address.city}
             </p>
             <div class="hero-actions" style="justify-content:flex-start;">
-              <a class="btn btn-red" href={telUrl}>📞 Appeler</a>
-              <a class="btn btn-cream" href={mapsUrl} target="_blank" rel="noopener">📍 Itinéraire</a>
-              <a class="btn btn-cream" href={site.facebook} target="_blank" rel="noopener">📘 Facebook</a>
+              <a class="btn btn-red" href={telUrl}><Phone class="icon" /> Appeler</a>
+              <a class="btn btn-cream" href={mapsUrl} target="_blank" rel="noopener"><MapPin class="icon" /> Itinéraire<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a>
+              <a class="btn btn-cream" href={site.facebook} target="_blank" rel="noopener"><Facebook class="icon" /> Facebook<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a>
             </div>
           </div>
         </div>
@@ -114,7 +118,7 @@ const catalog = buildCatalog(menu.categories);
   <!-- Footer -->
   <footer class="site-footer">
     <div class="wrap">
-      <strong>Rapid'Dinner</strong> — {site.address.street}, {site.address.postalCode} {site.address.city}
+      <strong>Rapid'Dinner</strong>, {site.address.street}, {site.address.postalCode} {site.address.city}
       <br />
       Tél. <a href={telUrl}>{site.phone}</a> ·
       <a href={site.facebook} target="_blank" rel="noopener">Facebook</a>
