@@ -435,3 +435,21 @@ img {
   justify-content: center;
   margin-top: 1.1rem;
 }
+
+/* Icônes SVG (currentColor) et texte réservé aux lecteurs d'écran */
+.icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex: none;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

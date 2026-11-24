@@ -16,20 +16,76 @@
     "longitude": -2.7008,
     "note": "Coordonnées approximatives centre-bourg — à affiner avec le client."
   },
-  "service": ["Sur place", "À emporter"],
+  "service": [
+    "Sur place",
+    "À emporter"
+  ],
   "facebook": "https://www.facebook.com/people/Rapid-Diner-morel/",
   "facebookNote": "URL exacte à confirmer avec le client.",
   "priceRange": "€",
-  "servesCuisine": ["Fast food", "Burger", "Kebab"],
+  "servesCuisine": [
+    "Fast food",
+    "Burger",
+    "Kebab"
+  ],
   "hours": [
-    { "days": "Mardi au samedi", "slots": ["12h00 – 14h00", "18h30 – 22h00"] },
-    { "days": "Dimanche", "slots": ["18h30 – 22h00"] },
-    { "days": "Lundi", "slots": ["Fermé"] }
+    {
+      "days": "Mardi au samedi",
+      "slots": [
+        "12h00 – 14h00",
+        "18h30 – 22h00"
+      ]
+    },
+    {
+      "days": "Dimanche",
+      "slots": [
+        "18h30 – 22h00"
+      ]
+    },
+    {
+      "days": "Lundi",
+      "slots": [
+        "Fermé"
+      ]
+    }
   ],
   "openingHoursSpec": [
-    { "days": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "12:00", "closes": "14:00" },
-    { "days": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "18:30", "closes": "22:00" },
-    { "days": ["Sunday"], "opens": "18:30", "closes": "22:00" }
+    {
+      "days": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "12:00",
+      "closes": "14:00"
+    },
+    {
+      "days": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "18:30",
+      "closes": "22:00"
+    },
+    {
+      "days": [
+        "Sunday"
+      ],
+      "opens": "18:30",
+      "closes": "22:00"
+    }
   ],
-  "alcoholNotice": "L'abus d'alcool est dangereux pour la santé. À consommer avec modération."
+  "alcoholNotice": "L'abus d'alcool est dangereux pour la santé. À consommer avec modération.",
+  "googleReviews": {
+    "score": 4.6,
+    "count": 116,
+    "checkedAt": "2026-11-24",
+    "href": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x481027d40a3b2047:0xe84d71820caaea4f",
+    "note": "Chiffres relevés à la main sur la fiche Google. Ils vieillissent : relire et mettre à jour checkedAt."
+  }
 }

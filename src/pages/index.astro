@@ -4,6 +4,7 @@ import MenuCategory from '../components/MenuCategory.astro';
 import site from '../data/site.json';
 import menu from '../data/menu.json';
 import OpenStatusBadge from '../components/OpenStatusBadge.astro';
+import GoogleReviewsLink from '../components/GoogleReviewsLink.astro';
 
 const mapsQuery = encodeURIComponent(
   `${site.name} ${site.address.street} ${site.address.postalCode} ${site.address.city}`
@@ -38,6 +39,7 @@ const telUrl = `tel:${site.phoneHref}`;
 
       <div class="hero-status">
         <OpenStatusBadge />
+        <GoogleReviewsLink />
       </div>
 
       <div class="hero-facts">
