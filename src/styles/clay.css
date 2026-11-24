@@ -302,10 +302,9 @@ img {
 }
 .item {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr;
   gap: 0.25rem 0.75rem;
-  align-items: baseline;
-  padding: 0.6rem 0.15rem;
+  padding: 0.75rem 0.15rem;
   border-bottom: 1px dashed var(--cream-deep);
 }
 .item:last-child {
@@ -315,21 +314,57 @@ img {
   font-weight: 700;
 }
 .item-desc {
-  grid-column: 1 / -1;
   color: var(--muted);
-  font-size: 0.87rem;
+  font-size: 0.95rem;
 }
-.item-price {
-  font-weight: 800;
-  color: var(--red);
-  white-space: nowrap;
+.item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
 }
-.item-price .frites {
-  display: block;
-  font-size: 0.72rem;
+.add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0 0.9rem;
+  border: none;
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  box-shadow: var(--clay-sm);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.add-btn:hover {
+  background: var(--cream);
+}
+.add-btn:active {
+  box-shadow: var(--clay-inset);
+  transform: translateY(1px);
+}
+.add-label {
+  color: var(--muted);
   font-weight: 600;
-  color: var(--gold);
-  text-align: right;
+}
+.add-price {
+  font-weight: 800;
+  color: var(--red-dark);
+}
+@media (min-width: 640px) {
+  .item {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+  .item-actions {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
 }
 
 /* Bandeau sauces */

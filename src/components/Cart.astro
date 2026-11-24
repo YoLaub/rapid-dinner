@@ -1,0 +1,382 @@
+---
+import Close from './icons/Close.astro';
+import Minus from './icons/Minus.astro';
+import Phone from './icons/Phone.astro';
+import Plus from './icons/Plus.astro';
+import site from '../data/site.json';
+
+const { catalog } = Astro.props;
+// "<" is escaped so menu text can never close the script tag.
+const catalogJson = JSON.stringify(catalog).replace(/</g, '\\u003c');
+---
+
+<script type="application/json" id="cart-catalog" set:html={catalogJson} />
+
+<div data-cart-bar hidden class="cart-bar">
+  <div class="wrap cart-bar-inner">
+    <p class="cart-bar-text">
+      <strong>Ma sélection</strong>
+      <span data-cart-summary></span>
+    </p>
+    <button type="button" class="btn btn-red" data-cart-open aria-haspopup="dialog">
+      Voir ma sélection
+    </button>
+  </div>
+</div>
+
+<dialog data-cart-dialog aria-labelledby="cart-title" class="cart-dialog">
+  <div class="cart-head">
+    <h2 id="cart-title">Ma sélection</h2>
+    <button type="button" class="round-btn" data-cart-close aria-label="Fermer ma sélection">
+      <Close class="icon" />
+    </button>
+  </div>
+
+  <ul data-cart-lines class="cart-lines"></ul>
+
+  <p data-cart-total aria-live="polite" class="cart-total"></p>
+  <p class="cart-note">
+    Rien n'est envoyé en ligne. Cette sélection sert à préparer votre appel, les prix sont indicatifs.
+    Les sauces se choisissent au téléphone.
+  </p>
+
+  <p data-cart-closed hidden class="cart-closed"></p>
+
+  <a data-cart-call href={`tel:${site.phoneHref}`} class="btn btn-red cart-call">
+    <Phone class="icon" />
+    <span data-cart-call-label>Appeler {site.phone}</span>
+  </a>
+
+  <div class="cart-secondary">
+    <button type="button" class="btn btn-cream" data-cart-copy hidden>Copier le récapitulatif</button>
+    <button type="button" class="btn btn-cream" data-cart-clear>Vider ma sélection</button>
+  </div>
+</dialog>
+
+<p class="sr-only" role="status" aria-live="polite" data-cart-announce></p>
+
+<style is:global>
+  .cart-bar {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 40;
+    background: rgba(253, 252, 250, 0.96);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--cream-deep);
+    box-shadow: 0 -6px 18px rgba(150, 110, 60, 0.18);
+    padding: 0.6rem 0;
+  }
+  .cart-bar[hidden] {
+    display: none;
+  }
+  .cart-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+  .cart-bar-text {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.25;
+  }
+  .cart-bar-text strong {
+    display: block;
+  }
+  .cart-bar-text span {
+    color: var(--muted);
+  }
+  /* Keeps the end of the page reachable above the fixed bar. */
+  body.has-cart-bar {
+    padding-bottom: 5.5rem;
+  }
+
+  .cart-dialog {
+    width: min(100%, 32rem);
+    max-width: 100%;
+    max-height: 88dvh;
+    margin: auto auto 0;
+    padding: 1.25rem;
+    border: none;
+    border-radius: var(--r-lg) var(--r-lg) 0 0;
+    background: var(--surface);
+    color: var(--ink);
+    box-shadow: var(--clay);
+    overflow-y: auto;
+  }
+  .cart-dialog::backdrop {
+    background: rgba(32, 29, 26, 0.55);
+  }
+  @media (min-width: 640px) {
+    .cart-dialog {
+      margin: auto;
+      border-radius: var(--r-lg);
+    }
+  }
+  .cart-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .cart-head h2 {
+    color: var(--red);
+    font-size: 1.4rem;
+  }
+  .round-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: var(--surface);
+    box-shadow: var(--clay-sm);
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .round-btn:active {
+    box-shadow: var(--clay-inset);
+  }
+  .cart-lines {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+  }
+  .cart-lines li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--cream-deep);
+  }
+  .cart-line-name {
+    margin: 0;
+    font-weight: 700;
+  }
+  .cart-line-price {
+    margin: 0;
+    font-weight: 800;
+    color: var(--red-dark);
+    font-size: 0.9rem;
+  }
+  .cart-line-controls {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .cart-line-controls span {
+    min-width: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+  }
+  .cart-total {
+    margin: 1rem 0 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+  .cart-note {
+    margin: 0.35rem 0 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+  .cart-closed {
+    margin: 1rem 0 0;
+    padding: 0.75rem 1rem;
+    border-radius: var(--r-md);
+    background: var(--cream);
+    box-shadow: var(--clay-inset);
+    font-weight: 700;
+    color: var(--red-dark);
+    font-size: 0.92rem;
+  }
+  .cart-closed[hidden] {
+    display: none;
+  }
+  .cart-call {
+    margin-top: 1rem;
+    width: 100%;
+    min-height: 48px;
+  }
+  .cart-secondary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+  }
+  .cart-secondary .btn {
+    min-height: 44px;
+    font-size: 0.9rem;
+  }
+  .cart-secondary [hidden] {
+    display: none;
+  }
+</style>
+
+<script>
+  import {
+    addItem,
+    cartTotalCents,
+    changeQuantity,
+    clearCart,
+    lineId,
+    loadCart,
+    saveCart,
+    serializeCart,
+  } from '../lib/cart.js';
+  import { getOpenStatus } from '../lib/openStatus.js';
+
+  const NBSP = ' ';
+  const euros = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' });
+  const money = (cents) => euros.format(cents / 100);
+  const catalog = JSON.parse(document.getElementById('cart-catalog').textContent ?? '{}');
+
+  function getStorage() {
+    try {
+      return window.localStorage;
+    } catch {
+      return undefined; // storage blocked: the cart works, it just is not remembered
+    }
+  }
+  const storage = getStorage();
+
+  const bar = document.querySelector('[data-cart-bar]');
+  const summary = document.querySelector('[data-cart-summary]');
+  const dialog = document.querySelector('[data-cart-dialog]');
+  const linesList = dialog.querySelector('[data-cart-lines]');
+  const totalEl = dialog.querySelector('[data-cart-total]');
+  const closedEl = dialog.querySelector('[data-cart-closed]');
+  const callLabel = dialog.querySelector('[data-cart-call-label]');
+  const copyButton = dialog.querySelector('[data-cart-copy]');
+  const announcer = document.querySelector('[data-cart-announce]');
+
+  let cart = loadCart(storage, catalog);
+
+  function announce(message) {
+    // Clearing first makes screen readers repeat an identical message.
+    announcer.textContent = '';
+    window.setTimeout(() => (announcer.textContent = message), 50);
+  }
+
+  const describe = (line) => {
+    const item = catalog[line.itemKey];
+    return `${item.name}${line.variant ? ` (${line.variant})` : ''}`;
+  };
+
+  // Text rendered at build time ("Appeler 02 97 41 99 89"), restored while the shop is open.
+  const openCallText = callLabel.textContent ?? '';
+
+  function renderCallState() {
+    const status = getOpenStatus(new Date());
+    closedEl.hidden = status.isOpen;
+    if (status.isOpen) {
+      callLabel.textContent = openCallText;
+    } else {
+      closedEl.textContent = `Fermé pour le moment, on rouvre ${status.nextOpening}. Votre sélection vous attend.`;
+      callLabel.textContent = `Rappeler ${status.nextOpening}`;
+    }
+  }
+
+  const icon = (d) =>
+    `<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"></path></svg>`;
+
+  function stepButton(line, delta, label, svg) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'round-btn';
+    button.dataset.lineId = lineId(line);
+    button.dataset.delta = String(delta);
+    button.setAttribute('aria-label', `${label} ${describe(line)}`);
+    button.innerHTML = svg;
+    return button;
+  }
+
+  function render() {
+    const count = cart.lines.reduce((sum, line) => sum + line.quantity, 0);
+    const total = money(cartTotalCents(cart, catalog));
+    bar.hidden = count === 0;
+    document.body.classList.toggle('has-cart-bar', count > 0);
+    summary.textContent = `${count} ${count > 1 ? 'articles' : 'article'} · ${total}`;
+    totalEl.textContent = `Total estimé${NBSP}: ${total}`;
+
+    linesList.replaceChildren(
+      ...cart.lines.map((line) => {
+        const row = document.createElement('li');
+        const text = document.createElement('div');
+        const name = document.createElement('p');
+        name.className = 'cart-line-name';
+        name.textContent = describe(line);
+        const price = document.createElement('p');
+        price.className = 'cart-line-price';
+        price.textContent = money(cartTotalCents({ lines: [line] }, catalog));
+        text.append(name, price);
+
+        const controls = document.createElement('div');
+        controls.className = 'cart-line-controls';
+        const qty = document.createElement('span');
+        qty.textContent = String(line.quantity);
+        controls.append(
+          stepButton(line, -1, 'Retirer un', icon('M5 12h14')),
+          qty,
+          stepButton(line, 1, 'Ajouter un', icon('M12 5v14M5 12h14')),
+        );
+        row.append(text, controls);
+        return row;
+      }),
+    );
+
+    renderCallState();
+    if (count === 0 && dialog.open) dialog.close();
+  }
+
+  function commit(next) {
+    cart = next;
+    saveCart(storage, cart);
+    render();
+  }
+
+  // Add buttons live in the menu (outside this component): delegate from the document.
+  document.addEventListener('click', (event) => {
+    const target = event.target;
+    const add = target.closest('button[data-add]');
+    if (add) {
+      const itemKey = add.dataset.itemKey;
+      const variant = add.dataset.variant;
+      const next = addItem(cart, { itemKey, variant }, catalog);
+      if (next === cart) return;
+      commit(next);
+      announce(`${describe({ itemKey, variant })} ajouté à votre sélection.`);
+      return;
+    }
+    const step = target.closest('button[data-line-id]');
+    if (step) commit(changeQuantity(cart, step.dataset.lineId, Number(step.dataset.delta)));
+  });
+
+  document.querySelector('[data-cart-open]').addEventListener('click', () => dialog.showModal());
+  dialog.querySelector('[data-cart-close]').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close(); // click on the backdrop
+  });
+  dialog.querySelector('[data-cart-clear]').addEventListener('click', () => {
+    commit(clearCart());
+    announce('Sélection vidée.');
+  });
+
+  if (navigator.clipboard) {
+    copyButton.hidden = false;
+    copyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(serializeCart(cart, catalog));
+        announce('Récapitulatif copié.');
+      } catch {
+        announce('Copie impossible sur cet appareil.');
+      }
+    });
+  }
+
+  render();
+  window.setInterval(renderCallState, 60_000);
+</script>
