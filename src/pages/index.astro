@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import MenuCategory from '../components/MenuCategory.astro';
 import site from '../data/site.json';
 import menu from '../data/menu.json';
+import OpenStatusBadge from '../components/OpenStatusBadge.astro';
 
 const mapsQuery = encodeURIComponent(
   `${site.name} ${site.address.street} ${site.address.postalCode} ${site.address.city}`
@@ -33,6 +34,10 @@ const telUrl = `tel:${site.phoneHref}`;
         <a class="btn btn-red" href="#formules">🍔 Voir la carte</a>
         <a class="btn btn-gold" href={telUrl}>📞 {site.phone}</a>
         <a class="btn btn-cream" href={mapsUrl} target="_blank" rel="noopener">📍 Itinéraire</a>
+      </div>
+
+      <div class="hero-status">
+        <OpenStatusBadge />
       </div>
 
       <div class="hero-facts">
