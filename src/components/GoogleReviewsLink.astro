@@ -1,0 +1,33 @@
+---
+import Star from './icons/Star.astro';
+import site from '../data/site.json';
+import { formatRatingLabel } from '../lib/reviews.js';
+
+const { href, score, count } = site.googleReviews;
+---
+
+<a
+  {href}
+  target="_blank"
+  rel="noopener noreferrer"
+  data-testid="google-reviews"
+  class="clay-pill reviews"
+>
+  <Star class="icon star" />
+  <span>{formatRatingLabel({ score, count })}</span>
+  <span class="sr-only">(s'ouvre dans un nouvel onglet)</span>
+</a>
+
+<style>
+  .reviews {
+    background: var(--surface);
+    box-shadow: var(--clay-sm);
+    min-height: 44px;
+    padding-inline: 1.1rem;
+  }
+  .reviews :global(.star) {
+    color: var(--gold);
+    stroke: var(--ink);
+    stroke-width: 1;
+  }
+</style>
